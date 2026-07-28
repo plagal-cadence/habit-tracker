@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shoulder Surgery PT — July 2026</title>
+  <style>
+    :root {
+      --ink: #111;
+      --line: #666;
+      --light-line: #bbb;
+      --bg: #fff;
+    }
+
+    @page {
+      size: 11in 8.5in landscape;
+      margin: 0.45in 0.5in 0.35in;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    /* ── Page header ─────────────────────────────── */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 2px;
+      margin-bottom: 5px;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: 0.3px;
+    }
+
+    .page-header .subtitle {
+      margin: 0;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #444;
+    }
+
+    /* ── Main table ──────────────────────────────── */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--light-line);
+      padding: 0;
+      vertical-align: middle;
+    }
+
+    /* Exercise label column */
+    .ex-col {
+      width: 2.6in;
+      text-align: left;
+      padding: 2px 5px;
+      font-size: 10px;
+      font-weight: 600;
+      background: #fafafa;
+      vertical-align: middle;
+      line-height: 1.25;
+    }
+
+    .ex-col .ex-detail {
+      display: block;
+      font-weight: 400;
+      font-size: 8.5px;
+      color: #555;
+      margin-top: 0;
+    }
+
+    /* Day header cells */
+    .day-hdr {
+      text-align: center;
+      font-size: 9.5px;
+      font-weight: 700;
+      line-height: 1.2;
+      padding: 2px 1px;
+      background: #f0f0f0;
+      border-bottom: 1.5px solid var(--line);
+    }
+
+    .day-hdr .day-num {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .day-hdr.unused {
+      background: #f8f8f8;
+      color: #ccc;
+    }
+
+    /* Checkbox cells */
+    .chk {
+      text-align: center;
+      vertical-align: middle;
+      height: 0.21in;
+      padding: 0;
+    }
+
+    .chk.unused {
+      background: #fafafa;
+    }
+
+    .chk:not(.unused) {
+      background: #fff;
+    }
+
+    /* Session background colors */
+    .chk.am {
+      background: #e8f4fd;
+    }
+
+    .chk.noon {
+      background: #fff8e8;
+    }
+
+    .chk.pm {
+      background: #f0f8ee;
+    }
+
+    /* Week divider */
+    th.week-break,
+    td.week-break {
+      border-right: 3px solid var(--line) !important;
+    }
+
+    @media screen {
+      body {
+        padding: 20px;
+        background: #ddd;
+      }
+
+      .page {
+        max-width: 11in;
+        background: #fff;
+        margin: 0 auto 24px;
+        padding: 0.45in 0.45in 0.35in;
+        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.13);
+      }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // ── Exercise definitions ────────────────────────────────────────────────────
+    const exercises = [
+      { name: "Pulley — straight, lateral, behind back", detail: "3 sets × 10 reps, hold 3 sec" },
+      { name: "Shoulder abduction with cane", detail: "2 sets × 10 reps, hold 3 sec" },
+      { name: "Wall walk — straight, lateral", detail: "2 sets × 8 reps, hold 5 sec" },
+      { name: "Bilateral external rotation & and back with band", detail: "3 sets × 8 reps, hold 3 sec" },
+      { name: "Isometrics — forward, back, in, out", detail: "3 sets × 4 reps(1 each), hold 30 sec" },
+      { name: "Wall pushup with shoulders", detail: "3 sets × 10 reps" },
+      { name: "Double arm rotation with weight", detail: "3 sets × 10 reps" },
+      { name: "Cross body — low L to hi R, low R to L shoulder", detail: "3 sets × 10 reps" },
+      { name: "Bodyblade — front low, mid, hi, lateral low, mid, hi", detail: "2 sets × 30 secs each position" },
+      { name: "Wax on wax off — forward, lateral", detail: "3 sets × 10 reps" },
+      { name: "Plank", detail: "3 sets × 15 secs" },
+    ];
+
+    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const monthName = "July–August 2026";
+
+    const timingAssumptions = {
+      setupSecPerExercise: 15,
+      restBetweenSetsSec: 10,
+      movementSecPerRep: 1,
+      transitionSecPerRep: 1,
+      bilateralMultiplier: 2,
+    };
+
+    function countNameVariants(name) {
+      const dashParts = name.split(/—|-/);
+      if (dashParts.length < 2) {
+        return 1;
+      }
+
+      const variantsPart = dashParts.slice(1).join("-");
+      const variants = variantsPart
+        .split(",")
+        .map(part => part.replace(/[()]/g, "").trim())
+        .filter(Boolean);
+
+      return Math.max(1, variants.length);
+    }
+
+    function estimateMinutes(name, detail) {
+      const setsMatch = detail.match(/(\d+)\s*sets?/i);
+      const repsMatch = detail.match(/(\d+)\s*reps?/i);
+      const directionsMatch = detail.match(/(\d+)\s*directions?/i);
+      const holdOnOffMatch = detail.match(/hold\s*(\d+)\s*sec\s*on\s*\/\s*(\d+)\s*(?:sec\s*)?off/i);
+      const holdMatch = detail.match(/hold\s*(\d+)\s*sec/i);
+      const isBilateral = /\bbilateral\b/i.test(detail);
+
+      const sets = setsMatch ? parseInt(setsMatch[1], 10) : 1;
+      const reps = repsMatch ? parseInt(repsMatch[1], 10) : 0;
+      const directions = directionsMatch ? parseInt(directionsMatch[1], 10) : 1;
+
+      let secondsPerRep = timingAssumptions.movementSecPerRep + timingAssumptions.transitionSecPerRep;
+      if (holdOnOffMatch) {
+        const onSec = parseInt(holdOnOffMatch[1], 10);
+        const offSec = parseInt(holdOnOffMatch[2], 10);
+        secondsPerRep = onSec + offSec + timingAssumptions.transitionSecPerRep;
+      } else if (holdMatch) {
+        const holdSec = parseInt(holdMatch[1], 10);
+        secondsPerRep = holdSec + timingAssumptions.movementSecPerRep;
+      }
+
+      const variantCount = countNameVariants(name);
+      const workSeconds = sets * reps * directions * variantCount * secondsPerRep * (isBilateral ? timingAssumptions.bilateralMultiplier : 1);
+      const restSeconds = Math.max(sets - 1, 0) * timingAssumptions.restBetweenSetsSec;
+      const setupSeconds = timingAssumptions.setupSecPerExercise;
+      const totalSeconds = workSeconds + restSeconds + setupSeconds;
+      return Math.max(1, Math.round(totalSeconds / 60));
+    }
+
+    const exercisesWithMinutes = exercises.map(ex => ({
+      ...ex,
+      minutes: estimateMinutes(ex.name, ex.detail),
+    }));
+
+    const sessionMinutes = exercisesWithMinutes.reduce((sum, ex) => sum + ex.minutes, 0);
+    const dayMinutes = sessionMinutes;
+
+    // Single checklist page for Jul 26 – Aug 8.
+    const pages = [
+      {
+        label: "Jul 26 – Aug 8",
+        days: [
+          // Week of Jul 26
+          { d: 26, dow: 0 }, { d: 27, dow: 1 }, { d: 28, dow: 2 }, { d: 29, dow: 3 },
+          { d: 30, dow: 4 }, { d: 31, dow: 5 }, { d: 1, dow: 6, wb: true },
+          // Week of Aug 2
+          { d: 2, dow: 0 }, { d: 3, dow: 1 }, { d: 4, dow: 2 }, { d: 5, dow: 3 },
+          { d: 6, dow: 4 }, { d: 7, dow: 5 }, { d: 8, dow: 6, wb: true },
+        ]
+      },
+    ];
+
+    function buildPage(page) {
+      const days = page.days;
+
+      let html = `<div class="page">`;
+
+      html += `<div class="page-header">
+    <h1>Shoulder Surgery PT</h1>
+    <span class="subtitle">${page.label}, 2026 &nbsp;|&nbsp; ~${dayMinutes} min/day</span>
+  </div>`;
+
+      html += `<table><colgroup><col style="width:2.6in">`;
+      days.forEach(() => {
+        html += `<col><col><col>`;
+      });
+      html += `</colgroup>`;
+
+      // Day header row
+      html += `<thead><tr>
+    <th class="ex-col" style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;background:#f0f0f0;padding:4px 5px;">Exercise</th>`;
+      days.forEach(d => {
+        const wbCls = d.wb ? " week-break" : "";
+        if (d.inactive) {
+          const label = d.d !== null ? d.d : "";
+          html += `<th class="day-hdr unused${wbCls}" colspan="3" style="border-right: 1.5px solid var(--line);"><span class="day-num" style="font-size:13px">${label}</span><br/>${dayNames[d.dow]}</th>`;
+        } else {
+          html += `<th class="day-hdr${wbCls}" colspan="3" style="border-right: 1.5px solid var(--line);"><span class="day-num">${d.d}</span><br/>${dayNames[d.dow]}<br/><span style="font-size: 7px; color: #999;">AM &nbsp; MD &nbsp; PM</span></th>`;
+        }
+      });
+      html += `</tr></thead><tbody>`;
+
+      exercisesWithMinutes.forEach(ex => {
+        html += `<tr>
+      <td class="ex-col">${ex.name}<span class="ex-detail">${ex.detail}  ·  ~${ex.minutes} min</span></td>`;
+        days.forEach(d => {
+          const wbCls = d.wb ? " week-break" : "";
+          if (d.inactive) {
+            html += `<td class="chk unused" style="padding: 2px;"></td>`;
+            html += `<td class="chk unused" style="padding: 2px;"></td>`;
+            html += `<td class="chk unused${wbCls}" style="padding: 2px; border-right: 1.5px solid var(--line);"></td>`;
+          } else {
+            html += `<td class="chk am" style="padding: 2px; font-size: 8px; color: #666;" title="Morning"></td>`;
+            html += `<td class="chk noon" style="padding: 2px; font-size: 8px; color: #666;" title="Midday"></td>`;
+            html += `<td class="chk pm${wbCls}" style="padding: 2px; font-size: 8px; color: #666; border-right: 1.5px solid var(--line);" title="Evening"></td>`;
+          }
+        });
+        html += `</tr>`;
+      });
+
+      html += `</tbody></table></div>`;
+      return html;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const root = document.body;
+      pages.forEach(p => {
+        root.insertAdjacentHTML("beforeend", buildPage(p));
+      });
+    });
+  </script>
+</body>
+
+</html>

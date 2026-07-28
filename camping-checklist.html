@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camping Checklist</title>
+  <style>
+    :root {
+      --ink: #111;
+      --line: #666;
+      --light-line: #bbb;
+      --muted: #444;
+      --bg: #fff;
+      --common: #455a64;
+      --boon: #2e7d32;
+      --hdr-blue: #e8f4fd;
+      --hdr-amber: #fff8e8;
+      --hdr-green: #eef8ee;
+      --row-tint: #fcfcfc;
+    }
+
+    @page {
+      size: 11in 8.5in landscape;
+      margin: 0.3in 0.35in 0.25in;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: 0.3px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 9.5px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      vertical-align: middle;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .b-common {
+      background: var(--common);
+    }
+
+    .b-boon {
+      background: var(--boon);
+    }
+
+    .sub {
+      margin: 0;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      align-items: stretch;
+      border: 1px solid var(--line);
+    }
+
+    .card {
+      border: 0;
+      border-right: 1px solid var(--light-line);
+      background: #fff;
+      break-inside: avoid;
+    }
+
+    .card:nth-child(4n) {
+      border-right: 0;
+    }
+
+    .card h2 {
+      margin: 0;
+      padding: 4px 6px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #2f2f2f;
+      border-top: 0;
+      border-bottom: 1.5px solid var(--line);
+      background: var(--hdr-blue);
+    }
+
+    .card:nth-child(4n+1) h2 {
+      background: var(--hdr-blue);
+    }
+
+    .card:nth-child(4n+2) h2 {
+      background: var(--hdr-amber);
+    }
+
+    .card:nth-child(4n+3) h2 {
+      background: var(--hdr-green);
+    }
+
+    .card:nth-child(4n) h2 {
+      background: var(--hdr-blue);
+    }
+
+    .card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .card li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 0.2in;
+      padding: 0 5px;
+      border-bottom: 1px solid #e6e6e6;
+      background: #fff;
+    }
+
+    .card li:nth-child(even) {
+      background: var(--row-tint);
+    }
+
+    .card li:last-child {
+      border-bottom: 1px solid var(--light-line);
+    }
+
+    .box {
+      width: 11px;
+      height: 11px;
+      border: 1.5px solid #666;
+      border-radius: 2px;
+      flex: 0 0 auto;
+      margin-left: 2px;
+      background: #fff;
+    }
+
+    .txt {
+      font-size: 8.8px;
+      line-height: 1.2;
+    }
+
+    .foot {
+      margin-top: 6px;
+      font-size: 8.5px;
+      color: #555;
+    }
+
+    @media screen {
+      body {
+        background: #ddd;
+        padding: 20px;
+      }
+
+      .page {
+        max-width: 11in;
+        margin: 0 auto 24px;
+        padding: 0.45in 0.45in 0.35in;
+        background: #fff;
+        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.13);
+      }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+      }
+
+      .hdr {
+        margin-bottom: 4px;
+      }
+
+      h1 {
+        font-size: 17px;
+      }
+
+      .badge {
+        font-size: 9.5px;
+        padding: 1px 6px;
+      }
+
+      .sub {
+        font-size: 9.8px;
+        letter-spacing: 0.45px;
+      }
+
+      .card h2 {
+        font-size: 10.5px;
+        padding: 3px 5px;
+      }
+
+      .card li {
+        gap: 4px;
+        min-height: 0.145in;
+        padding: 0 4px;
+      }
+
+      .box {
+        width: 10px;
+        height: 10px;
+      }
+
+      .txt {
+        font-size: 9.2px;
+        line-height: 1.1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="hdr">
+      <h1>Camping Checklist</h1>
+    </div>
+    <div class="grid">
+      <section class="card">
+        <h2>Food &amp; Drinks</h2>
+        <ul>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Coffee, filters, pour-over</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Tea & strainer</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Bagels & cream cheese</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Bacon & sausage</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Hash browns</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Eggs</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Pancakes</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Butter</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Syrup</span></li>
+          <li style="border-bottom: 2px solid #555; min-height:0; padding:0; background:transparent;"></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Bread</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Cheese</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Condiments</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Salami</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Pate'</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Crackers</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Fruit</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Pistachios</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Berries</span></li>
+          <li style="border-bottom: 2px solid #555; min-height:0; padding:0; background:transparent;"></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Iced tea</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Waters & water jug</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Fizzy water</span></li>
+          <li style="border-bottom: 2px solid #555; min-height:0; padding:0; background:transparent;"></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Chicken breasts</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Spiedies</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Burgers</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Buns</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Mac-n-cheese</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Salad &amp; dressing</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Mashed potatoes</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Canned vegetables</span></li>
+          <li style="border-bottom: 2px solid #555; min-height:0; padding:0; background:transparent;"></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Spices</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Salt & pepper*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Mints</span></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Gear &amp; Activities</h2>
+        <ul>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Cooler & lid ice</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">GoPro, mount, battery</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Day pack</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Kayak & paddles</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Life jackets</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Paddle board</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Binoculars</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Books</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Boom box</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Games</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Corn hole</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Hiking sticks</span></li>
+          <li style="border-bottom: 2px solid #555; min-height:0; padding:0; background:transparent;"></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Bikes, batteries, chargers</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Bike shoes, helmets, gloves</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Chain lube</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Heart monitor</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Lock</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Pump</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Bike tools</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Tubes</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Garmin Edge</span></li>
+          <li style="border-bottom: 2px solid #555; min-height:0; padding:0; background:transparent;"></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Watch charger</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Clothes</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Jackets</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Sunglasses</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Hats</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Swim suits</span></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Camp Setup &amp; Utility</h2>
+        <ul>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Starlink*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Tools</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Step ladder</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Stinky slinks*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Chairs</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Knife sharpener</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Leatherman</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Trash bin & bags*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Flashlight*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Mats*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Rope*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Tape (scotch & duct)*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Scissors*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Lighter fluid*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Matches*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Propane</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Pillows &amp; blankets</span></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Kitchen &amp; Cooking</h2>
+        <ul>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Large forks & spoons*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Paper towels & napkins*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Plates & bowls*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Cups*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Utensils*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Dish soap & scrubber*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Dish towels</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Cork screw*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">BBQ Starter*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Pots, pans, skillet*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Propane grill, griddle, scraper*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Sharp knife & cutting board*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Spatula*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Zip lock bags*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Strainer*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Table cloth & bungees*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Can opener*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Microwave bowls</span></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Hygiene &amp; Health</h2>
+        <ul>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Sun screen*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Moist towelettes*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Cleaners*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Allergy pills</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Aspirin*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Bug repellant*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">First aid kit*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Glasses wipes</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Tissues*</span></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Off-Grid Utility</h2>
+        <ul>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Fresh water container</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Generator & syphon</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Propane light*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Propane - small bottles*</span></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Go</h2>
+        <ul>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Cash</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Cell phone & adapter</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Maps</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Mail</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Check tire pressure & oil</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Pool noodles for doors</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Trailer camera & TPS</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Gun, magazines</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Reduce wather heater</span></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Toilet</h2>
+        <ul>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Toiletries</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Toilet blue*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Toilet paper*</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Toilet wipes</span></li>
+          <li><span class="box" aria-hidden="true"></span><span class="txt">Towels & hand towels</span></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
