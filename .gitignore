@@ -1,0 +1,7 @@
+﻿# Ignore generated and editor files
+~$*
+*.tmp
+*.log
+*.bak
+*.swp
+.DS_Store
