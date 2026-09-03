@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shoulder Surgery PT — July 2026</title>
+  <title>Shoulder Surgery PT — August 2026</title>
   <style>
     :root {
       --ink: #111;
@@ -198,7 +198,7 @@
     ];
 
     const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const monthName = "July–August 2026";
+    const monthName = "August–September 2026";
 
     const timingAssumptions = {
       setupSecPerExercise: 15,
@@ -261,17 +261,17 @@
     const sessionMinutes = exercisesWithMinutes.reduce((sum, ex) => sum + ex.minutes, 0);
     const dayMinutes = sessionMinutes;
 
-    // Single checklist page for Jul 26 – Aug 8.
+    // Single checklist page for Aug 24 – Sep 6.
     const pages = [
       {
-        label: "Jul 26 – Aug 8",
+        label: "Aug 24 – Sep 6",
         days: [
-          // Week of Jul 26
-          { d: 26, dow: 0 }, { d: 27, dow: 1 }, { d: 28, dow: 2 }, { d: 29, dow: 3 },
-          { d: 30, dow: 4 }, { d: 31, dow: 5 }, { d: 1, dow: 6, wb: true },
-          // Week of Aug 2
-          { d: 2, dow: 0 }, { d: 3, dow: 1 }, { d: 4, dow: 2 }, { d: 5, dow: 3 },
-          { d: 6, dow: 4 }, { d: 7, dow: 5 }, { d: 8, dow: 6, wb: true },
+          // Week of Aug 23
+          { d: 24, dow: 1 }, { d: 25, dow: 2 }, { d: 26, dow: 3 }, { d: 27, dow: 4 },
+          { d: 28, dow: 5 }, { d: 29, dow: 6 }, { d: 30, dow: 0, wb: true },
+          // Week of Aug 30
+          { d: 31, dow: 1 }, { d: 1, dow: 2 }, { d: 2, dow: 3 }, { d: 3, dow: 4 },
+          { d: 4, dow: 5 }, { d: 5, dow: 6 }, { d: 6, dow: 0, wb: true },
         ]
       },
     ];
