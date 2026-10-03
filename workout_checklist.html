@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WORKOUT CHECKLIST — Oct 4 – 17, 2026</title>
+  <style>
+    :root {
+      --ink: #111;
+      --line: #666;
+      --light-line: #bbb;
+      --bg: #fff;
+    }
+
+    @page {
+      size: 11in 8.5in landscape;
+      margin: 0.45in 0.5in 0.35in;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    /* ── Page header ─────────────────────────────── */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 2px;
+      margin-bottom: 5px;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: 0.3px;
+    }
+
+    .page-header .subtitle {
+      margin: 0;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #444;
+    }
+
+    /* ── Main table ──────────────────────────────── */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--light-line);
+      padding: 0;
+      vertical-align: middle;
+    }
+
+    /* Exercise label column */
+    .ex-col {
+      width: 2.6in;
+      text-align: left;
+      padding: 2px 5px;
+      font-size: 10px;
+      font-weight: 600;
+      background: #fafafa;
+      vertical-align: middle;
+      line-height: 1.25;
+    }
+
+    .ex-col .ex-detail {
+      display: block;
+      font-weight: 400;
+      font-size: 8.5px;
+      color: #555;
+      margin-top: 0;
+    }
+
+    th.ex-col {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      background: #f0f0f0;
+      padding: 4px 5px;
+    }
+
+    /* Day header cells */
+    .day-hdr {
+      text-align: center;
+      font-size: 9.5px;
+      font-weight: 700;
+      line-height: 1.2;
+      padding: 2px 1px;
+      background: #f0f0f0;
+      border-bottom: 1.5px solid var(--line);
+      border-right: 1.5px solid var(--line);
+    }
+
+    .day-hdr .day-num {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .day-hdr .session-key {
+      font-size: 7px;
+      color: #999;
+    }
+
+    .day-hdr .month-tag {
+      display: block;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: #777;
+    }
+
+    /* Checkbox cells */
+    .chk {
+      text-align: center;
+      vertical-align: middle;
+      height: 0.21in;
+      padding: 2px;
+      font-size: 8px;
+      color: #666;
+    }
+
+    /* Session background colors */
+    .chk.am {
+      background: #e8f4fd;
+    }
+
+    .chk.noon {
+      background: #fff8e8;
+    }
+
+    .chk.pm {
+      background: #f0f8ee;
+      border-right: 1.5px solid var(--line);
+    }
+
+    /* Week divider */
+    th.week-break,
+    td.week-break {
+      border-right: 3px solid var(--line) !important;
+    }
+
+    @media screen {
+      body {
+        padding: 20px;
+        background: #ddd;
+      }
+
+      .page {
+        max-width: 11in;
+        background: #fff;
+        margin: 0 auto 24px;
+        padding: 0.45in 0.45in 0.35in;
+        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.13);
+      }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page"><div class="page-header">
+    <h1>WORKOUT CHECKLIST</h1>
+    <span class="subtitle">Oct 4 – 17, 2026 &nbsp;|&nbsp; ~29 min/day</span>
+  </div><table><colgroup><col style="width:2.6in"><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup><thead><tr><th class="ex-col">Exercise</th><th class="day-hdr" colspan="3"><span class="month-tag">Oct</span><span class="day-num">4</span>Sun<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">5</span>Mon<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">6</span>Tue<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">7</span>Wed<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">8</span>Thu<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">9</span>Fri<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr week-break" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">10</span>Sat<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">11</span>Sun<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">12</span>Mon<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">13</span>Tue<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">14</span>Wed<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">15</span>Thu<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">16</span>Fri<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th><th class="day-hdr week-break" colspan="3"><span class="month-tag">&nbsp;</span><span class="day-num">17</span>Sat<br /><span class="session-key">AM &nbsp; MD &nbsp; PM</span></th></tr></thead><tbody><tr><td class="ex-col">Pulley — straight, lateral, behind back<span class="ex-detail">3 sets × 10 reps, hold 3 sec  ·  ~7 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Shoulder abduction with cane<span class="ex-detail">2 sets × 10 reps, hold 3 sec  ·  ~2 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Bilateral external rotation &amp; and back with band<span class="ex-detail">3 sets × 8 reps, hold 3 sec  ·  ~2 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Cross body — low L to hi R, low R to L shoulder<span class="ex-detail">3 sets × 10 reps  ·  ~3 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Bodyblade — front low, mid, hi, lateral low, mid, hi<span class="ex-detail">2 sets × 30 secs each position  ·  ~1 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Wax on wax off — forward, lateral<span class="ex-detail">3 sets × 10 reps  ·  ~3 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Curls<span class="ex-detail">3 sets × 15 reps, 15 lbs  ·  ~2 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Rows<span class="ex-detail">3 sets × 15 reps, 15 lbs  ·  ~2 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Abductions<span class="ex-detail">3 sets × 12 reps, 5 lbs  ·  ~2 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Presses<span class="ex-detail">3 sets × 15 reps, 15 lbs  ·  ~2 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">On side ext rotations<span class="ex-detail">3 sets × 12 reps, 5 lbs  ·  ~2 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr><tr><td class="ex-col">Plank<span class="ex-detail">3 sets × 15 secs  ·  ~1 min</span></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm" title="Evening"></td><td class="chk am" title="Morning"></td><td class="chk noon" title="Midday"></td><td class="chk pm week-break" title="Evening"></td></tr></tbody></table></div>
+</body>
+
+</html>

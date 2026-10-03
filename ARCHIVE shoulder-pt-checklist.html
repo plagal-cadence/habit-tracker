@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shoulder Surgery PT — August 2026</title>
+  <title>Shoulder Surgery PT — September 2026</title>
   <style>
     :root {
       --ink: #111;
@@ -186,19 +186,20 @@
     const exercises = [
       { name: "Pulley — straight, lateral, behind back", detail: "3 sets × 10 reps, hold 3 sec" },
       { name: "Shoulder abduction with cane", detail: "2 sets × 10 reps, hold 3 sec" },
-      { name: "Wall walk — straight, lateral", detail: "2 sets × 8 reps, hold 5 sec" },
       { name: "Bilateral external rotation & and back with band", detail: "3 sets × 8 reps, hold 3 sec" },
-      { name: "Isometrics — forward, back, in, out", detail: "3 sets × 4 reps(1 each), hold 30 sec" },
-      { name: "Wall pushup with shoulders", detail: "3 sets × 10 reps" },
-      { name: "Double arm rotation with weight", detail: "3 sets × 10 reps" },
       { name: "Cross body — low L to hi R, low R to L shoulder", detail: "3 sets × 10 reps" },
       { name: "Bodyblade — front low, mid, hi, lateral low, mid, hi", detail: "2 sets × 30 secs each position" },
       { name: "Wax on wax off — forward, lateral", detail: "3 sets × 10 reps" },
+      { name: "Curls", detail: "3 sets × 15 reps, 15 lbs" },
+      { name: "Rows", detail: "3 sets × 15 reps, 15 lbs" },
+      { name: "Abductions", detail: "3 sets × 12 reps, 5 lbs" },
+      { name: "Presses", detail: "3 sets × 15 reps, 15 lbs" },
+      { name: "On side ext rotations", detail: "3 sets × 12 reps, 5 lbs" },
       { name: "Plank", detail: "3 sets × 15 secs" },
     ];
 
     const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const monthName = "August–September 2026";
+    const monthName = "September–October 2026";
 
     const timingAssumptions = {
       setupSecPerExercise: 15,
@@ -261,17 +262,17 @@
     const sessionMinutes = exercisesWithMinutes.reduce((sum, ex) => sum + ex.minutes, 0);
     const dayMinutes = sessionMinutes;
 
-    // Single checklist page for Aug 24 – Sep 6.
+    // Single checklist page for Sep 20 – Oct 3.
     const pages = [
       {
-        label: "Aug 24 – Sep 6",
+        label: "Sep 20 – Oct 3",
         days: [
-          // Week of Aug 23
-          { d: 24, dow: 1 }, { d: 25, dow: 2 }, { d: 26, dow: 3 }, { d: 27, dow: 4 },
-          { d: 28, dow: 5 }, { d: 29, dow: 6 }, { d: 30, dow: 0, wb: true },
-          // Week of Aug 30
-          { d: 31, dow: 1 }, { d: 1, dow: 2 }, { d: 2, dow: 3 }, { d: 3, dow: 4 },
-          { d: 4, dow: 5 }, { d: 5, dow: 6 }, { d: 6, dow: 0, wb: true },
+          // Week of Sep 20
+          { d: 20, dow: 0 }, { d: 21, dow: 1 }, { d: 22, dow: 2 }, { d: 23, dow: 3 },
+          { d: 24, dow: 4 }, { d: 25, dow: 5 }, { d: 26, dow: 6, wb: true },
+          // Week of Sep 27
+          { d: 27, dow: 0 }, { d: 28, dow: 1 }, { d: 29, dow: 2 }, { d: 30, dow: 3 },
+          { d: 1, dow: 4 }, { d: 2, dow: 5 }, { d: 3, dow: 6, wb: true },
         ]
       },
     ];
